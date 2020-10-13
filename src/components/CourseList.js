@@ -35,6 +35,11 @@ function CourseList(props) {
               </tbody>
             </table>
           </div>
+          <div class="card-action">
+            <Link to="/course" className="btn btn-primary">
+              Add Course
+            </Link>
+          </div>
         </div>
       </div>
     </div>
