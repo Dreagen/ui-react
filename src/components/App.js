@@ -6,10 +6,25 @@ import CoursesPage from "./CoursesPage";
 import { Route, Switch, Redirect } from "react-router-dom";
 import NotFoundPage from "./NotFoundPage";
 import ManageCoursePage from "./ManageCoursePage";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import teal from "@material-ui/core/colors/teal";
+import red from "@material-ui/core/colors/red";
 
 function App() {
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: teal[500],
+      },
+      secondary: {
+        main: red[500],
+      },
+      type: "dark",
+    },
+  });
+
   return (
-    <div className="container-fluid">
+    <ThemeProvider theme={theme}>
       <Header />
       <Switch>
         <Route path="/" exact component={HomePage} />
@@ -20,7 +35,7 @@ function App() {
         <Redirect from="/about-page" to="/about" />
         <Route component={NotFoundPage} />
       </Switch>
-    </div>
+    </ThemeProvider>
   );
 }
 
