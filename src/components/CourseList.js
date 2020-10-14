@@ -15,6 +15,7 @@ function CourseList(props) {
                   <th>Title</th>
                   <th>Author ID</th>
                   <th>Category</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
