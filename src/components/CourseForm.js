@@ -5,6 +5,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Button from '@material-ui/core/Button';
 
 function CourseForm(props) {
   const useStyles = makeStyles((theme) => ({
@@ -23,44 +24,24 @@ function CourseForm(props) {
       <TextField id="outlined-basic" label="Title" />
 
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-label">Author</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={age}
           onChange={(event) => setAge(event.target.value)}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={""}></MenuItem>
+          <MenuItem value={"1"}>Cory House</MenuItem>
+          <MenuItem value={"2"}>Scott Allen</MenuItem>
         </Select>
       </FormControl>
 
-      <div className="form-group">
-        <label htmlFor="author">Author</label>
-        <div className="field">
-          <select id="author" name="authorId" value="" className="form-control">
-            <option value="" />
-            <option value="1">Cory House</option>
-            <option value="2">Scott Allen</option>
-          </select>
-        </div>
-      </div>
+      <FormControl className={classes.formControl}>
+      <TextField id="outlined-basic" label="Category" />
+      </FormControl>
 
-      <div className="form-group">
-        <label htmlFor="category">Category</label>
-        <div className="field">
-          <input
-            type="text"
-            id="category"
-            name="category"
-            className="form-control"
-            value=""
-          />
-        </div>
-      </div>
-
-      <input type="submit" value="Save" className="btn btn-primary" />
+      <Button variant="contained" color="secondary">Submit</Button>
     </form>
   );
 }

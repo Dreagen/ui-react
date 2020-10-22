@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseForm from './common/CourseForm';
+import CourseForm from './CourseForm';
 
 const ManageCoursePage = props => {
     return (

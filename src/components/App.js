@@ -7,17 +7,16 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import NotFoundPage from "./NotFoundPage";
 import ManageCoursePage from "./ManageCoursePage";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import teal from "@material-ui/core/colors/teal";
-import red from "@material-ui/core/colors/red";
+import { blueGrey, cyan, lightBlue, pink } from "@material-ui/core/colors";
 
 function App() {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: teal[500],
+        main: lightBlue[200],
       },
       secondary: {
-        main: red[500],
+        main: pink[500],
       },
       type: "dark",
     },
