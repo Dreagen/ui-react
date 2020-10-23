@@ -134,7 +134,6 @@ function Header() {
   };
 
   useEffect(() => {
-    debugger;
     setPageName(getCurrentPageName());
   }, [getCurrentPageName, location.pathname]);
 
