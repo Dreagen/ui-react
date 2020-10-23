@@ -149,6 +149,22 @@
       "authorId": 2,
       "category": "Any old category",
       "createdAt": 1603464480820
+    },
+    {
+      "id": 21,
+      "slug": "fdfdfd",
+      "title": "fdfdfd",
+      "authorId": 1,
+      "category": "glfdjgpiodfg",
+      "createdAt": 1603466407497
+    },
+    {
+      "id": 22,
+      "slug": "new-courseq",
+      "title": "New Courseq",
+      "authorId": 1,
+      "category": "Test",
+      "createdAt": 1603467717909
     }
   ],
   "authors": [

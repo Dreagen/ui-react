@@ -54,7 +54,7 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/courses" component={CoursesPage} />
         <Route path="/about" component={AboutPage} />
-        <Route path="/course/:slug" component={ManageCoursePage} />
+        <Route path="/course/:slug" render={(props) => <ManageCoursePage createToast={createToast} {...props} />} />
         <Route path="/course" render={(props) => <ManageCoursePage createToast={createToast} {...props} />} />
         <Redirect from="/about-page" to="/about" />
         <Route component={NotFoundPage} />
