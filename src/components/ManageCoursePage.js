@@ -1,6 +1,7 @@
 import React from "react";
+import courseStore from "../stores/courseStore";
 import CourseForm from "./CourseForm";
-import * as courseApi from "../api/courseApi";
+import * as courseActions from "../actions/courseActions";
 
 const ManageCoursePage = (props) => {
   const [toastOpen, setToastOpen] = React.useState(false);
@@ -17,7 +18,7 @@ const ManageCoursePage = (props) => {
   React.useEffect(() => {
     const slug = props.match.params.slug;
     if (slug) {
-      courseApi.getCourseBySlug(slug).then(_course => setCourse(_course))
+      setCourse(courseStore.getCourseBySlug(slug));
     }
   }, [props.match.params.slug]);
 
@@ -53,7 +54,7 @@ const ManageCoursePage = (props) => {
       return;
     }
 
-    courseApi.saveCourse(course).then(() => {
+    courseActions.saveCourse(course).then(() => {
       props.createToast(`${course.title} course saved!`);
       props.history.push("/courses");
     });
