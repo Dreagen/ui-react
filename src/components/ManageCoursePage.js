@@ -4,7 +4,6 @@ import CourseForm from "./CourseForm";
 import * as courseActions from "../actions/courseActions";
 
 const ManageCoursePage = (props) => {
-  const [toastOpen, setToastOpen] = React.useState(false);
   const [errors, setErrors] = React.useState({});
 
   const [course, setCourse] = React.useState({
@@ -21,10 +20,6 @@ const ManageCoursePage = (props) => {
       setCourse(courseStore.getCourseBySlug(slug));
     }
   }, [props.match.params.slug]);
-
-  function handleToastClose() {
-    setToastOpen(false);
-  }
 
   function handleChange({ target }) {
     setCourse({ ...course, [target.name]: target.value });
@@ -55,7 +50,6 @@ const ManageCoursePage = (props) => {
     }
 
     courseActions.saveCourse(course).then(() => {
-      props.createToast(`${course.title} course saved!`);
       props.history.push("/courses");
     });
   }
@@ -66,8 +60,6 @@ const ManageCoursePage = (props) => {
       course={course}
       onChange={handleChange}
       onSubmit={handleSubmit}
-      toastOpen={toastOpen}
-      onToastClose={handleToastClose}
     />
   );
 };

@@ -72,11 +72,67 @@
     },
     {
       "id": 11,
-      "slug": "gggg",
-      "title": "gggg good game",
+      "slug": "a-new-course",
+      "title": "A new course",
       "authorId": 1,
-      "category": "ffff",
-      "createdAt": 1603904224479
+      "category": "Some category",
+      "createdAt": 1604396199706
+    },
+    {
+      "id": 12,
+      "slug": "a-second-new-course",
+      "title": "A second new course",
+      "authorId": 2,
+      "category": "An amazing category",
+      "createdAt": 1604396296425
+    },
+    {
+      "id": 13,
+      "slug": "fdfsf",
+      "title": "fdfsf",
+      "authorId": 2,
+      "category": "fdsf",
+      "createdAt": 1604396922176
+    },
+    {
+      "id": 14,
+      "slug": "lkllll",
+      "title": "lkllll",
+      "authorId": 1,
+      "category": "lllll",
+      "createdAt": 1604396955071
+    },
+    {
+      "id": 15,
+      "slug": "jioiojo",
+      "title": "jioiojo",
+      "authorId": 2,
+      "category": "jknjkj",
+      "createdAt": 1604396992758
+    },
+    {
+      "id": 16,
+      "slug": "new-new-new",
+      "title": "New new new",
+      "authorId": 1,
+      "category": "lalalala",
+      "createdAt": 1604423240108
+    },
+    {
+      "id": 17,
+      "slug": "new-read-all-about-it",
+      "title": "NEW read all about it",
+      "authorId": 1,
+      "category": "dfdfdfd",
+      "createdAt": 1604423328220
+    },
+    {
+      "id": 18,
+      "slug": "gtrgefgd",
+      "title": "gtrgefgd",
+      "authorId": 1,
+      "category": "gfgfgf",
+      "createdAt": 1604423360682
     }
   ],
   "authors": [

@@ -14,8 +14,8 @@ class CourseStore extends EventEmitter {
     this.removeListener(CHANGE_EVENT, callback);
   }
 
-  emitChange() {
-    this.emit(CHANGE_EVENT);
+  emitChange(actionType, actionData) {
+    this.emit(CHANGE_EVENT, actionType, actionData);
   }
 
   getCourses() {
@@ -33,17 +33,17 @@ Dispatcher.register((action) => {
   switch (action.actionType) {
     case actionTypes.CREATE_COURSE:
       _courses.push(action.course);
-      store.emitChange();
+      store.emitChange(action.actionType, action.course);
       break;
 
     case actionTypes.LOAD_COURSES:
       _courses = action.courses;
-      store.emitChange();
+      store.emitChange(action.actionType);
       break;
 
       case actionTypes.UPDATE_COURSE:
       _courses = _courses.map(course => course.id === action.course.id ? action.course : course);
-      store.emitChange();
+      store.emitChange(action.actionType, action.course);
       break;
 
     default:

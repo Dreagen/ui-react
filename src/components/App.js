@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import Header from "./common/Header";
@@ -10,6 +10,8 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { lightBlue, pink } from "@material-ui/core/colors";
 import Snackbar from "@material-ui/core/Snackbar";
 import { Alert } from "@material-ui/lab";
+import courseStore from "../stores/courseStore";
+import actionTypes from "../actions/actionTypes";
 
 function App() {
   const theme = createMuiTheme({
@@ -26,6 +28,18 @@ function App() {
 
   const [toastMessage, setToastMessage] = React.useState("");
   const [toastOpen, setToastOpen] = React.useState(false);
+
+  useEffect(() => {
+    courseStore.addChangeListener(onChange);
+
+    return () => courseStore.removeChangeListener(onChange);
+  }, []);
+
+  function onChange(actionType, course) {
+    if (actionType === actionTypes.CREATE_COURSE || actionType === actionTypes.UPDATE_COURSE) {
+      createToast(`Course ${course.title} saved`);
+    } 
+  }
 
   const createToast = (message) =>
   {
@@ -54,8 +68,8 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/courses" component={CoursesPage} />
         <Route path="/about" component={AboutPage} />
-        <Route path="/course/:slug" render={(props) => <ManageCoursePage createToast={createToast} {...props} />} />
-        <Route path="/course" render={(props) => <ManageCoursePage createToast={createToast} {...props} />} />
+        <Route path="/course/:slug" component={ManageCoursePage} />
+        <Route path="/course" component={ManageCoursePage} />
         <Redirect from="/about-page" to="/about" />
         <Route component={NotFoundPage} />
       </Switch>
